@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class JDBCdemo {
-	private String driverClass="com.mysql.jdbc.Driver";
+	private String driverClass="com.mysql.jdbc.Driver   ";
 	private String jdbcURL="jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8";
 	private String user="root";
 	private String pwd="root";
