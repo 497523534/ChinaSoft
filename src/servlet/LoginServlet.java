@@ -2,15 +2,17 @@ package servlet;
 
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import dao.JDBCdemo;
 
 
-@WebServlet("/Loginservlet")
+@WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     public LoginServlet() {  
@@ -53,12 +55,13 @@ public class LoginServlet extends HttpServlet {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	    if(rSet){
+	   if(rSet){
 			response.sendRedirect("success.jsp");
 		}
 		else{
 			response.sendRedirect("fail.jsp");
 		}
+		
 
       
 		
