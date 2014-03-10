@@ -42,25 +42,20 @@ public class LoginServlet extends HttpServlet {
 			   }
 			  }
 		 */
-	    JDBCdemo jdbCdemo=new JDBCdemo();
+	    JDBCdemo check=new JDBCdemo();
 	    Boolean rSet=null;
 	    try {
-			jdbCdemo.getConnection();
-			rSet=jdbCdemo.checkUser(username,userpassword);
+			check.getConnection();
+			rSet=check.checkUser(username,userpassword);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	   if(rSet){
+	    if(rSet){
 			response.sendRedirect("success.jsp");
 		}
 		else{
 			response.sendRedirect("fail.jsp");
 		}
-		
-
-      
-		
-		
 	}
 
 }
