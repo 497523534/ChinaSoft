@@ -57,7 +57,7 @@ public class LoginServlet extends HttpServlet {
 			else  if(identity.equals("administrator")) {
 		         rSet=check.checkAdministrator(username,userpassword);	
 		         if(rSet){
-				   response.sendRedirect("register.jsp");
+				   response.sendRedirect("administrator.jsp");
 			}
 			}
 		} catch (Exception e) {
