@@ -10,10 +10,11 @@
 <form name="loginform" action="LoginServlet" method="post">
 用户名：<input type=text name="uname"><br>
 密码：  <input type=password name="upassword"><br>
-
+<input type="radio" name="identity" value="administrator"/>管理员
+<input type="radio" name="identity" value="user"/> 用户
+<br>
 <input type="submit" name="login"    value="登陆">
-<input type="button" name="register" value="注册"   onClick="javascript:location.href='register.jsp'">
+<input type="button" name="register" value="注册" onClick="javascript:location.href='register.jsp'">
 </form>
-
 </body>
 </html>

@@ -21,7 +21,8 @@ public class LoginServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		String username=request.getParameter("uname");
 		String userpassword=request.getParameter("upassword");
-		//System.out.println(username+"  "+userpassword);
+		String identity=request.getParameter("identity");
+		//System.out.println(username+"  "+userpassword+"   "+identity);
 		//String result="";
 		/*if((username== "")||(username==null)||(username.length()>20)){
 			   try{
@@ -42,19 +43,25 @@ public class LoginServlet extends HttpServlet {
 			   }
 			  }
 		 */
+		//System.out.println(identity);
 	    JDBCdemo check=new JDBCdemo();
 	    Boolean rSet=null;
 	    try {
 			check.getConnection();
-			rSet=check.checkUser(username,userpassword);
+			if(identity.equals("user")){
+			     rSet=check.checkUser(username,userpassword);
+			     if(rSet){
+				   response.sendRedirect("user.jsp");
+			}
+			}
+			else  if(identity.equals("administrator")) {
+		         rSet=check.checkAdministrator(username,userpassword);	
+		         if(rSet){
+				   response.sendRedirect("register.jsp");
+			}
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
-	    if(rSet){
-			response.sendRedirect("success.jsp");
-		}
-		else{
-			response.sendRedirect("fail.jsp");
 		}
 	}
 

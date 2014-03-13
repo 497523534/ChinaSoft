@@ -8,7 +8,7 @@
 </head>
 <body>
 <form name="registerform" action="RegisterServlet" method="post">
-用户名：<input type=text name="rname"><br>
+用户名： <input type=text name="rname"><br>
 密码：  <input type=password name="rpassword"><br>
 <input type="submit" name="commit"   value="提交  ">
 </form>

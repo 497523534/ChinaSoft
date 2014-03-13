@@ -45,6 +45,32 @@ public class JDBCdemo {
 			}
 		    return Value;
 	}
+	public boolean checkAdministrator(String username,String userpassword){
+		boolean Value=false;
+	    try {
+	    	stmt=conn.createStatement();
+	    	String sql =" select*from administratorinfo " ;
+			//pstmt = (PreparedStatement)conn.prepareStatement(sql);		
+			//pstmt.setString(1, username);
+			//pstmt.setString(2, userpassword);
+			rs = stmt.executeQuery(sql);
+			while(true){
+			  if(rs.next()){
+				  if(rs.getString(1).equals(username)&&rs.getString(2).equals(userpassword))
+				  {
+				  Value=true;
+				  break;
+				  }
+			  }
+			  else {
+				break;
+			}	
+		}
+	    }catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return  Value;
+	}
 	public void registerUser(String rname,String rpassword){
 		    String  sql="INSERT INTO userinfo(username,userpassword) VALUES('"+rname+"','"+rpassword+"')";
 		    try {
