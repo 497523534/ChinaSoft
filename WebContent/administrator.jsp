@@ -7,7 +7,7 @@
 <title>administrator</title>
 </head>
 <body>
-<form name="UploadForm" enctype="multipart/form-data" method="post" action="uploadscorm"> 
+<form name="UploadForm" enctype="multipart/form-data" method="post" action="UploadScormServlet"> 
 <input type="file" name="File1" size="20" maxlength="20"> <br> 
 <input type="submit"value="上传"> 
 </form> 

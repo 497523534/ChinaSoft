@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 @WebServlet("/UploadScormServlet" )
-@MultipartConfig(location = "下载:\\", fileSizeThreshold = 1024)
+@MultipartConfig(location = "/Users/jasonlee/Documents/JavaEEWorkspace", fileSizeThreshold = 1024)
 public class UploadScormServlet   extends HttpServlet{
 	private String fileNameExtractorRegex = "filename=\".+\"";  
 	private static final long serialVersionUID = -952078951324677625L;
